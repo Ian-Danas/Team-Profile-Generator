@@ -60,7 +60,6 @@ function questionLoop(){
             addIntern()
         }
         else{
-            console.log(team)
             html2write = generateTeam(team)
             write2File(html2write)
         }
