@@ -5,6 +5,7 @@ const Manager = require("./lib/Manager");
 const generateTeam = require("./util/generateHtml")
 const fs = require('fs')
 const team = []
+//function to prompt user about the manager when program starts up
 function onStart (){
     inquirer
     .prompt([
@@ -36,6 +37,7 @@ function onStart (){
     });
 }
 
+//function to call back to to continue to ask user to add engineers or interns until they choose to finish
 function questionLoop(){
     inquirer
     .prompt([
@@ -64,6 +66,7 @@ function questionLoop(){
         }
     });
 }
+//function to prompt user for questiona about enginner to build new engineer object
 function addEnginner(){
     inquirer
     .prompt([
@@ -94,6 +97,7 @@ function addEnginner(){
         questionLoop()
     });
 }
+//function to prompt user for questiona about intern to build new intern object
 function addIntern(){
     inquirer
     .prompt([
@@ -124,6 +128,7 @@ function addIntern(){
         questionLoop()
     });
 }
+//function to write html to a file
 function write2File(html){
     fs.writeFile('team.html', html , (err) =>
   err ? console.error(err) : console.log('Success!')
